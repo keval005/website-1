@@ -1,0 +1,105 @@
+.nav_bar{
+    width: 1560px;
+    height: 64px;
+    padding: 6px 15px 4px;
+    opacity: 0.8;
+    background-color:#545454;
+  }
+  
+  .inst{
+      font: 16px;color: #646464;
+      font-weight: bold;
+      line-height: 3.25;
+  }
+  
+  .hori_line_1{
+      width: 20px;
+      background-color: black;
+      margin-right: 5px;
+      width: 62px;
+      height: 1px;
+      background-color: #ccc;
+  }
+  .hori_line_2{
+      width: 20px;
+      background-color: black;
+      margin-left: 5px;
+      width: 62px;
+      height: 1px;
+      background-color: #ccc;
+  }
+  .prices {
+      margin-top: 40px;
+      margin-bottom: 14px;
+      font-family: Roboto;
+      font-size: 36px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 0.67;
+      letter-spacing: normal;
+      text-align: center;
+      color: #4f4f4f;
+    }
+    
+    extra_ser_text{
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        color: #646464;
+        margin-top: 17px;
+        margin-bottom: 12px;
+      }
+      .extra_ser_text_1{
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.44;
+        letter-spacing: normal;
+        color: #1d7a8c;
+      }
+      
+      .inc_cle_text{
+          font-size: 20px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.2;
+          letter-spacing: normal;
+          color: #4f4f4f;
+          margin-top: 23px;
+          margin-bottom: 18px;
+      }
+      .inc_cle_text_1{
+          font-size: 16px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 2.25;
+          letter-spacing: normal;
+          color: #4f4f4f;
+      }
+  
+  .help_text{
+      font-size: 20px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      color: #646464;
+  }
+
+  .help_text_1{
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #646464;
+}
