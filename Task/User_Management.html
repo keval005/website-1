@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- bootstrp link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- for text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- css file -->
+    <link rel="stylesheet" href="./css/User_Management.css">
+    <title>User Management</title>
+</head>
+
+<body>
+    <!-- Header Section  -->
+    <section>
+        <nav class="navbar navbar-expand-md  navbar-dark navbar_main">
+            <div class="nav-item">
+                <p class="text1">
+                    Helperland
+                </p>
+            </div>
+            <div class="nav-item">
+                <ul class="nav_left">
+                    <li class="user_img">
+                        <a href="" title="User Profile"><img src="./img/user.png" alt=""></a>
+                    </li>
+                    <li>
+                        <p class="text2">
+                            James Smith
+                        </p>
+                    </li>
+                    <li class="logout_img">
+                        <a href="" title="Sign Out"><img src="./img/logout.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Middle Section  -->
+    <section>
+        <div class="main_section">
+            <div class="parent_div">
+                <div class="child_div">
+                    <div>
+                        <div class="left_box">
+                            <p class="left_text">Service Management</p>
+                        </div>
+                        <div class="left_box">
+                            <p class="left_text">Role Management</p>
+                        </div>
+                        <div class="left_box_1">
+                            <p class="left_text">Coupon Code Management</p>
+                            <a href=""><img src="./img/keyboard-right-arrow-button-copy.png" alt=""></a>
+                        </div>
+                        <div class="left_box">
+                            <p class="left_text">Escalation Management</p>
+                        </div>
+                        <div class="left_box">
+                            <p class="left_text">Service Request</p>
+                        </div>
+                        <div class="left_box">
+                            <p class="left_text">Service Providers</p>
+                        </div>
+                        <div class="left_box">
+                            <p class="left_text" style="color: #1fb6ff;">User Management</p>
+                        </div>
+                        <div class="left_box_1">
+                            <p class="left_text">Finance Module</p>
+                            <a href=""><img src="./img/keyboard-right-arrow-button-copy.png" alt=""></a>
+                        </div>
+                        <div class="left_box">
+                            <p class="left_text">Zip Code Management</p>
+                        </div>
+                        <div class="left_box">
+                            <p class="left_text">Rating Management</p>
+                        </div>
+                        <div class="left_box">
+                            <p class="left_text">Inquiry Management</p>
+                        </div>
+                        <div class="left_box">
+                            <p class="left_text">Newsletter Management</p>
+                        </div>
+                        <div class="left_box_1">
+                            <p class="left_text">Content Management</p>
+                            <a href=""><img src="./img/keyboard-right-arrow-button-copy.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="child_div_1">
+                    <div class="user_management">
+                        <p class="text_user"> User Management </p>
+                        <button><img src="./img/add.png" alt=""> <span class="text_new">Add New User</span></button>
+                    </div>
+
+                    <div>
+                        <div class="form_div">
+                            <form>
+                                <select name="" id="user_box">
+                                    <option value="User Name"><span class="user_name">User Name</span></option>
+                                </select>
+                                <select name="" id="user_box">
+                                    <option value="User Role"><span class="user_name">User Role</span></option>
+                                </select>
+                                <input type="number" maxlength="10" placeholder="Phone Number" id="user_box_1">
+                                <input type="number" maxlength="6" placeholder="Zipcode" id="user_box_2">
+                                <button type="button" class="user_search_clear"
+                                    style="background-color: #1fb6ff;">Search</button>
+                                <button type="button" class="user_search_clear">Clear</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="main_table">
+                        <div>
+                            <table class="table table-responsive">
+                                <tr class="first_row" style="background-color: #f9f9f9;">
+                                    <th class="col_1">
+                                        <div class="first_1">
+                                            <p>User Name</p>
+                                            <img src="./img/sort.png" alt="">
+                                        </div>
+                                    </th>
+                                    <th class="col_1">
+                                        <div class="first_1">
+                                            <p>User Type</p>
+                                        </div>
+                                    </th>
+                                    <th class="col_2">
+                                        <div class="first_1">
+                                            <p>Role</p>
+                                        </div>
+                                    </th>
+                                    <th class="col_1">
+                                        <div class="first_1">
+                                            <p>Postal Code</p>
+                                            <img src="./img/sort.png" alt="">
+                                        </div>
+                                    </th>
+                                    <th class="col_3">
+                                        <div class="first_1">
+                                            <p>City</p>
+                                        </div>
+                                    </th>
+                                    <th class="col_3">
+                                        <div class="first_1">
+                                            <p>Radius</p>
+                                            <img src="./img/sort.png" alt="">
+                                        </div>
+                                    </th>
+                                    <th class="col_1">
+                                        <div class="first_1">
+                                            <p>User Status</p>
+                                            <img src="./img/sort.png" alt="">
+                                        </div>
+                                    </th>
+                                    <th class="col_3">
+                                        <div class="first_1">
+                                            <p>Actions</p>
+                                        </div>
+                                    </th>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Lyum Watson</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Call Center</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p>Inquiry Manager</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21">Active</button>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_22">
+
+                                            <img src="./img/group-38.png" alt="">
+
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>John Smith</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Service Provider</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>10 km</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21">Active</button>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_22">
+                                            <img src="./img/group-38.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>John Smith</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Call Center</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p>Inquiry Manager</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21">Active</button>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_22">
+                                            <img src="./img/group-38.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>John Smith</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Customer</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21">Active</button>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_22">
+                                            <img src="./img/group-38.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>John Smith</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Call Center</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p>Content Manager</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21">Active</button>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_22">
+                                            <img src="./img/group-38.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>John Smith</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Customer</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21"
+                                            style="background-color: #ff6b6b; padding-left: 6px;">Inactive</button>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_22">
+                                            <img src="./img/group-38.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>John Smith</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Service Provider</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>20 km</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21">Active</button>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_22">
+                                            <img src="./img/group-38.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>John Smith</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Call Center</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p>Finance Manager</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21">Active</button>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_22">
+                                            <img src="./img/group-38.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>John Smith</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Customer</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21">Active</button>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_22">
+                                            <img src="./img/group-38.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="first_row">
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>John Smith</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>Customer</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_2">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_2">
+                                            <p>123456</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p>Berlin</p>
+                                        </div>
+                                    </td>
+                                    <td class="col_3">
+                                        <div class="first_2">
+                                            <p></p>
+                                        </div>
+                                    </td>
+                                    <td class="col_1">
+                                        <button type="button" class="first_21">Active</button>
+                                    </td>
+                                    <td class="col_1">
+                                        <div class="first_22">
+                                            <img src="./img/group-38.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <hr class="hr_last">
+                            <div class="last">
+                                <div class="user_last">
+                                    <p class="user_p">Show</p>
+                                    <select name="" id="user_last_box">
+                                        <option value="a">10</option>
+                                        <option value="b">15</option>
+                                        <option value="c">20</option>
+                                    </select>
+                                    <p class="user_p1">Entries</p>
+                                </div>
+
+                                <div class="next">
+                                    <div class="next_pade arr"><a href=""><img src="./img/polygon-1-copy-5.png"
+                                                alt=""></a></div>
+                                    <div class="next_pade" style="background-color: #565656; color: white;">1</div>
+                                    <div class="next_pade">2</div>
+                                    <div class="next_pade">3</div>
+                                    <div class="next_pade">4</div>
+                                    <div class="next_pade">5</div>
+                                    <div class="next_pade arr" style="transform: rotate(180deg);"><a href=""><img
+                                                src="./img/polygon-1-copy-5.png" alt=""></a></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div>
+                            <div class="copy">
+                                <p>
+                                    ©2018 Helperland. All rights reserved.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
