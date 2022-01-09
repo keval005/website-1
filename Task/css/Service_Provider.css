@@ -1,6 +1,6 @@
 /* navbar */
 .back_img_banner{
-    background-image: url(../img/becomservices.png);
+    background-image: url(../img/become-a-pro-banner.png);
     min-height: 930px;
     background-position: center;
     background-size: cover;
@@ -36,7 +36,7 @@
     text-align: right;
     color: #ffff;
 }
-.pri_ser{
+.prices{
     width: 161px;
     height: 40px;
     border: solid 1px rgba(255, 255, 255, 0.5);
@@ -241,6 +241,11 @@ input::placeholder{
 .for_work_img{
     margin-bottom: 40px;
 }
+
+.work_img1{
+    object-fit: contain;
+}
+
 
 /* background image */
 .back_img1{
