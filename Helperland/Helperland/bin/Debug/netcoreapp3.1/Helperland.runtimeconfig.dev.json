@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\keval\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\keval\\.nuget\\packages"
+    ]
+  }
+}

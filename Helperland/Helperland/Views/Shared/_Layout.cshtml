@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrp link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- for text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link href="~/css/Home Page.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div>
+        @RenderBody()
+
+    </div>
+
+    <section>
+        <div class="for_footer">
+            <div class="perent_footer">
+                <div class="first_child">
+                    <a asp-controller="Home" asp-action="Index"><img src="~/img/logo-small.png" alt="" class="footer_logo"></a>
+                </div>
+                <div class="secound_child">
+                    <ul class="footer_ul">
+                        <a asp-controller="Home" asp-action="Index" style="text-decoration:none;">
+                        <li class="footer_nav">Home</li></a>
+                        <a asp-controller="Home" asp-action="About" style="text-decoration:none;">
+                        <li class="footer_nav">About</li></a>
+                        <li class="footer_nav">TESTIMONIALS</li>
+                        <a asp-controller="Home" asp-action="Faqs" style="text-decoration:none;">
+                        <LI class="footer_nav">FAQS</LI></a>
+                        <li class="footer_nav" style="text-align: center;">INSURANCE POLICY</li>
+                        <li class="footer_nav">IMPRESSUM</li>
+                    </ul>
+                </div>
+                <div class="third_child">
+                    <i class="fa fa-facebook-square for_facebook"></i>
+                    <i class="fa fa-instagram for_insta"></i>
+                </div>
+            </div>
+            <hr class="hr_4">
+            <div class="term_con">
+                <p>©2018 Helperland. All rights reserved.   Terms and Conditions | Privacy Policy</p>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
