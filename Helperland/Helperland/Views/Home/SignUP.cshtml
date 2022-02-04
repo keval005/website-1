@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<body>
+    <link href="~/css/SignUP.css" rel="stylesheet" />
+    <link href="~/css/About.css" rel="stylesheet" />
+    <link href="~/css/Service Provider.css" rel="stylesheet" />
+    @Html.Partial("_Loginbtn")
+    <div class="frmcont1 container">
+        <div class="container">
+            <p class="faq2">Create an account</p>
+            <div class="imgcont">
+                <div class="line">
+                    <figure><img src="~/img/separator.png" alt=""></figure>
+                </div>
+                </br>
+
+            </div>
+        </div>
+
+        <form>
+            <div class="frm">
+                <div class="frm1">
+                    <input type="text" placeholder="First name">
+                    <input type="text" placeholder="Last name">
+                </div>
+                <div class="frm1">
+                    <input type="email" placeholder="Email address">
+                    <div class="phn1 pc1"><input list="code" name="code" value="+46"> <input type="tel" class="pc2" placeholder="Phone number"></div>
+                </div>
+                <div class="frm1">
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Confirm Password">
+                </div>
+            </div>
+            <div class="div2 div3">
+
+                <input type="checkbox" id="termsandcon" name="termsandcon" value="termsandcon">
+                <label for="termsandcon"> I have read the privacy policy</label>
+
+                <div class="button">
+                    <button type="submit" class="btn1">Register</button><br><br>
+                    <p>Already registered? <a data-dismiss="modal" data-toggle="modal" data-target="#loginModal" style="cursor: pointer; text-decoration: underline; color: blue;">Login now</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

@@ -41,7 +41,7 @@
                     <a class="nav-link" asp-controller="Home" asp-action="Contact_Us"><span class="book_now_text other_btn">Contact Us</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link login" href="#"><span class="login_text">Login</span></a>
+                    <a class="nav-link login" data-toggle="modal" data-target="#loginModal" href="#"><span class="login_text">Login</span></a>
                 </li>
                 <li class="nav-item prices" style="background-color: #29626d;">
                     <a class="nav-link" asp-controller="Home" asp-action="Service_Provider"><span class="login_text">Become a Helper</span></a>
@@ -49,6 +49,7 @@
             </ul>
         </div>
     </nav>
+    
     @RenderBody()
 
     <!-- footer -->
@@ -59,10 +60,13 @@
             </div>
             <div class="secound_child">
                 <ul class="footer_ul">
-                    <a asp-controller="Home" asp-action="Index" style="text-decoration: none;"><li class="footer_nav">Home</li></a>
-                    <a asp-controller="Home" asp-action="About" style="text-decoration: none;"><li class="footer_nav">About</li></a>
+                    <a asp-controller="Home" asp-action="Index" style="text-decoration: none;">
+                    <li class="footer_nav">Home</li></a>
+                    <a asp-controller="Home" asp-action="About" style="text-decoration: none;">
+                    <li class="footer_nav">About</li></a>
                     <li class="footer_nav">TESTIMONIALS</li>
-                    <a asp-controller="Home" asp-action="Faqs" style="text-decoration: none;"><li class="footer_nav">FAQS</li></a>
+                    <a asp-controller="Home" asp-action="Faqs" style="text-decoration: none;">
+                    <li class="footer_nav">FAQS</li></a>
                     <li class="footer_nav" style="text-align: center;">INSURANCE POLICY</li>
                     <li class="footer_nav">IMPRESSUM</li>
                 </ul>
