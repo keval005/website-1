@@ -1,8 +1,9 @@
-﻿@{
+﻿@inject SignInManager<AppUser> signmanager
+@{
     ViewData["Title"] = "Service Provider";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model Register;
 <body>
     <section>
         <link href="~/css/Service Provider.css" rel="stylesheet" />
@@ -14,45 +15,80 @@
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav ml-auto" style="align-items: center;">
-                        <li class="nav-item book_now">
-                            <a class="nav-link book_now_text" href="#"><span class="book_now_text">Book Now</span></a>
-                        </li>
-                        <li class="nav-item prices">
-                            <a class="nav-link" asp-controller="Home" asp-action="Price"><span class="book_now_text">Prices & services</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><span class="book_now_text other_btn">Warranty</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><span class="book_now_text other_btn">Blog</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Contact_Us"><span class="book_now_text other_btn">Contact Us</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link login" data-toggle="modal" data-target="#loginModal" href="#"><span class="login_text">Login</span></a>
-                        </li>
-                        <li class="nav-item pri_ser">
-                            <a class="nav-link" asp-controller="Home" asp-action="Service_Provider"><span class="login_text">Become a Helper</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link text-white"><img src="~/img/ic-flag.png" style="margin-right:7px ;"><i class="fa fa-chevron-down" style="color: white;"></i></a>
-                        </li>
+                        @if (signmanager.IsSignedIn(User))
+                        {
+                            <li class="nav-item prices">
+                                <a class="nav-link" asp-controller="Home" asp-action="Price"><span class="book_now_text">Prices & services</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="book_now_text other_btn">Warranty</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="book_now_text other_btn">Blog</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Contact_Us"><span class="book_now_text other_btn">Contact Us</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <form method="post" asp-controller="Home" asp-action="Logout">
+                                    <button type="submit" class="nav-link login" style="width:auto;cursor:pointer;background-color:transparent">
+                                        <span class="login_text">Logout @User.Identity.Name</span>
+                                    </button>
+                                </form>
+                            </li>
+                            <li class="nav-item book_now">
+                                <a class="nav-link" asp-controller="Home" asp-action="Service_Provider"><span class="login_text">Become a Helper</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link text-white"><img src="~/img/ic-flag.png" style="margin-right:7px ;"><i class="fa fa-chevron-down" style="color: white;"></i></a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item book_now">
+                                <a class="nav-link book_now_text" asp-controller="Home" asp-action="Book_Now"><span class="book_now_text">Book Now</span></a>
+                            </li>
+                            <li class="nav-item prices">
+                                <a class="nav-link" asp-controller="Home" asp-action="Price"><span class="book_now_text">Prices & services</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="book_now_text other_btn">Warranty</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="book_now_text other_btn">Blog</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Contact_Us"><span class="book_now_text other_btn">Contact Us</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link login" data-toggle="modal" data-target="#loginModal" href="#"><span class="login_text">Login</span></a>
+                            </li>
+                            <li class="nav-item book_now" style="background-color: #29626d;">
+                                <a class="nav-link" asp-controller="Home" asp-action="Service_Provider"><span class="login_text">Become a Helper</span></a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </nav>
             <div class="for_ragister">
                 <div class="ragister_form">
                     <h1 class="ragister_text">Ragister Now!</h1>
-                    <form action="" class="form">
-                        <input type="text" placeholder="First Name" class="for_input"><br>
-                        <input type="text" placeholder="Last Name" class="for_input"><br>
-                        <input type="email" name="" id="" placeholder="Email Address" class="for_input"><br>
+                    <form method="post" asp-action="SignUP" class="form">
+                        <input type="text" asp-for="FirstName" placeholder="First Name" class="for_input"><br>
+                        <span class="text-danger" asp-validation-for="FirstName"></span>
+                        <input type="text" asp-for="LastName" placeholder="Last Name" class="for_input"><br>
+                        <span class="text-danger" asp-validation-for="LastName"></span>
+                        <input type="email" name="" id="" asp-for="Email" placeholder="Email Address" class="for_input"><br>
+                        <span class="text-danger" asp-validation-for="Email"></span>
                         <div style="display: flex;" class="for_phone">
                             <input type="text" value="+46" class="fixed_phone_val">
-                            <input type="text" placeholder="Phone Number" class="for_input_phone"><br>
+                            <input type="text" asp-for="PhoneNumber" placeholder="Phone Number" class="for_input_phone"><br>
+                            <span class="text-danger" asp-validation-for="PhoneNumber"></span>
                         </div>
-                        <input type="password" placeholder="Password" class="for_input" /><br>
+                        <input type="password" asp-for="PassWord" placeholder="Password" class="for_input" /><br>
+                        <span class="text-danger" asp-validation-for="PassWord"></span>
+                        <input type="password" asp-for="ConfirmPassword" placeholder="Confirm Password" class="for_input" /><br>
+                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
                         <div style="display: flex;">
                             <input type="checkbox" name="" id="newsletter" class="for_cheakbox"><label for="newsletter" class="for_cheakbox_text">Send me newsletters from Helperland</label><br>
                         </div>

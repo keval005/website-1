@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\keval\\Downloads\\Task\\Helperland\\Helperland\\Helperland.csproj": {}
+    "C:\\Users\\keval\\Downloads\\New folder (4)\\Task\\Helperland\\Helperland\\Helperland.csproj": {}
   },
   "projects": {
-    "C:\\Users\\keval\\Downloads\\Task\\Helperland\\Helperland\\Helperland.csproj": {
+    "C:\\Users\\keval\\Downloads\\New folder (4)\\Task\\Helperland\\Helperland\\Helperland.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keval\\Downloads\\Task\\Helperland\\Helperland\\Helperland.csproj",
+        "projectUniqueName": "C:\\Users\\keval\\Downloads\\New folder (4)\\Task\\Helperland\\Helperland\\Helperland.csproj",
         "projectName": "Helperland",
-        "projectPath": "C:\\Users\\keval\\Downloads\\Task\\Helperland\\Helperland\\Helperland.csproj",
+        "projectPath": "C:\\Users\\keval\\Downloads\\New folder (4)\\Task\\Helperland\\Helperland\\Helperland.csproj",
         "packagesPath": "C:\\Users\\keval\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keval\\Downloads\\Task\\Helperland\\Helperland\\obj\\",
+        "outputPath": "C:\\Users\\keval\\Downloads\\New folder (4)\\Task\\Helperland\\Helperland\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\keval\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,30 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.AspNetCore.Mvc.TagHelpers": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

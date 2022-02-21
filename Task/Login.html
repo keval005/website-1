@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/Home.css">
+    <link rel="stylesheet" href="./css/Login.css">
+
+    <title>Login</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="back_img">
+            <nav class="navbar navbar-expand-xl navbar-dark nav_bar">
+                <img src="./img/logo-small.png" class="main_logo">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto" style="align-items: center;">
+                        <li class="nav-item book_now">
+                          <a class="nav-link book_now_text" href="#"><span class="book_now_text">Book a Clear</span></a>
+                        </li>
+                        <li class="nav-item prices">
+                          <a class="nav-link" href="#"><span class="book_now_text">Prices</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"><span class="book_now_text other_btn">Our Guarantee</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span class="book_now_text other_btn">Blog</span></a>
+                          </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><span class="book_now_text other_btn">Contact Us</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link login" data-toggle="modal" data-target="#loginModal" href="#"><span class="login_text">Login</span></a>
+                        </li>
+                        <li class="nav-item book_now">
+                            <a class="nav-link" href="#"><span class="login_text">Become a Helper</span></a>
+                        </li> 
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-white"><img src="./img/ic-flag.png" style="margin-right:7px ;"><i class="fa fa-chevron-down" style="color: white;"></i></a>
+                        </li>  
+                      </ul>
+                </div>  
+            </nav>
+
+            <div class="perent_div">
+                <div class="child1_home">
+                    <h1 class="child1_heading_text">Lorem ipsum  elit.</h1>
+                    <div style="display: flex;">
+                        <div>
+                            <i class="fa fa-check" style="color: #ffff;"></i>
+                        </div>
+                        <div>
+                            <p class="child1_home_text"> ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div>
+                            <i class="fa fa-check" style="color: #ffff;"></i>
+                        </div>
+                        <div>
+                            <p class="child1_home_text"> ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div>
+                            <i class="fa fa-check" style="color: #ffff;"></i>
+                        </div>
+                        <div>
+                            <p class="child1_home_text"> ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="child2_home">
+                    <Button value="" class="child2_btn">Let's Book Cleaner</Button>
+                </div>
+            </div>
+
+            <div>
+                <div class="home_img">
+                    <div class="home_child_img">
+                        <img src="./img/step-1.png" alt="" class="child_img">
+                        <p class="child_img_text">Enter Your Postcode</p>
+                    </div>
+                    <div>
+                        <img src="./img/step-arrow-1.png" alt="">
+                    </div>
+                    <div class="home_child_img">
+                        <img src="./img/step-2.png" alt="" class="child_img">
+                        <p class="child_img_text">Enter Your Postcode</p>
+                    </div>
+                    <div>
+                        <img src="./img/step-arrow-1-copy.png" alt="">
+                    </div>
+                    <div class="home_child_img">
+                        <img src="./img/step-3.png" alt="" class="child_img">
+                        <p class="child_img_text">Enter Your Postcode</p>
+                    </div>
+                    <div>
+                        <img src="./img/step-arrow-1.png" alt="">
+                    </div>
+                    <div class="home_child_img">
+                        <img src="./img/step-4.png" alt="" class="child_img">
+                        <p class="child_img_text">Enter Your Postcode</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="down_arrow">
+                <i class="fa fa-arrow-circle-o-down"></i>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" id="login-box">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Login to your account</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email1" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password1" placeholder="Password">
+                            </div>
+                            <div class="form-group text-left">
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <label for="vehicle1">Remember me</label><br>
+                            </div>
+                            <div class="btnlgn">
+                                <button type="button" class="btn btn-info btn-block btn-round rounded-pill">Login</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a class="setPointer forgotLink" id="forgot-link" data-dismiss="modal" data-toggle="modal" data-target="#forgotModal" style="cursor: pointer;">Forgot password?</a>
+                </div>
+                <div class="text-center">
+                    Don't have an account?
+
+                    <a class="register-link" data-dismiss="modal" style="cursor: pointer;">Create an account</a>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <div class="modal fade" id="forgotModal" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" id="forgot-box">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                     </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Forgot Password</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email1" placeholder="Email">
+                            </div>
+                            <div class="btnlgn">
+                                <button type="button" class="btn btn-info btn-block btn-round rounded-pill">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a class="setPointer forgotLink" id="login-link" data-dismiss="modal" data-toggle="modal" data-target="#loginModal" style="cursor: pointer;">Login now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    // $(document).ready(function() {
+    //     $('#loginModal').modal('show');
+    //     $(function() {
+    //         $('[data-toggle="tooltip"]').tooltip()
+    //     })
+
+    // });
+</script>
+<!-- Bootstrp link -->
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>

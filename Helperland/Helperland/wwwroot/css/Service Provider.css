@@ -110,7 +110,7 @@
 }
 
 .ragister_form {
-    height: 620px;
+    height:auto !important;
     width: 430px;
     display: flex;
     flex-direction: column;
