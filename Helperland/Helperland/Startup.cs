@@ -12,6 +12,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Helperland.Data;
 using Helperland.Models;
+using Helperland.Repository;
+using Helperland.User;
+using Helperland.Controllers;
 
 namespace Helperland
 {
@@ -37,6 +40,9 @@ namespace Helperland
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequiredUniqueChars = 1;
             });
+
+            services.AddScoped<IUserServiceHelper, UserServiceHelper>();
+            services.AddScoped<IBookServicesRepository, IBookServicesRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

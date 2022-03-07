@@ -8,10 +8,10 @@ namespace Helperland.Models
 {
     public class Login
     {
-        [Required]
+        [Required(ErrorMessage = "Required field")]
         [EmailAddress]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Required field")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [Display(Name = "Remember Me")]

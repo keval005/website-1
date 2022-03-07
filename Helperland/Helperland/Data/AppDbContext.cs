@@ -19,5 +19,10 @@ namespace Helperland.Data
         {
             base.OnModelCreating(builder);
         }
+
+        public virtual DbSet<UserAddress> addresses { get; set; }
+        public virtual DbSet<ServiceRequest> ServicesRequests { get; set; }
+        public virtual DbSet<ServiceRequestAddress> ServiceRequestAddress { get; set; }
+        public virtual DbSet<ServiceRequestExtra> ServiceRequestExtras { get; set; }
     }
 }
