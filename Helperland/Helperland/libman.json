@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@5.1.3",
+      "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "library": "jquery@3.6.0",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "limonte-sweetalert2@11.3.10",
+      "destination": "wwwroot/lib/limonte-sweetalert2/"
+    },
+    {
+      "library": "bootstrap-star-rating@4.1.2",
+      "destination": "wwwroot/lib/bootstrap-star-rating/"
+    },
+    {
+      "library": "font-awesome@6.0.0",
+      "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "select2@4.0.13",
+      "destination": "wwwroot/lib/select2/"
+    }
+  ]
+}

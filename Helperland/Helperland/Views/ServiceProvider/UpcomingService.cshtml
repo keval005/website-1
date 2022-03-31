@@ -1,0 +1,254 @@
+﻿@{
+    ViewData["Title"] = "Upcoming Services";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="main-content">
+    <div class="div-table">
+        <table class="table card-view-small-screen" id="tblUpcomingServices">
+            <thead>
+                <tr>
+                    <td>Service ID <img class="sort-img" alt=""></td>
+                    <td>Service date <img class="sort-img" alt=""></td>
+                    <td>Customer details <img class="sort-img" alt=""></td>
+                    <td>Payment <img class="sort-img" alt=""></td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section UserLayoutScripts{
+    <script type="text/javascript">
+        var table;
+
+        $(document).ready(function () {
+
+            table = $('#tblUpcomingServices').DataTable({
+                paging: true,
+                pagingType: "full_numbers",
+                processing: true,
+                serverSide: true,
+                filter: true,
+                ordering: true,
+                searching: false,
+                info: true,
+                ajax: {
+                    url: "/ServiceProvider/GetUpcomingServiceRequestsList",
+                    type: "POST",
+                    datatype: "json",
+                    dataSrc: 'data',
+                    "data": function (d) {
+                        d.includePetatHome = $("#chkWorkingWithPet").is(':checked');
+                    }
+                },
+                oLanguage: {
+                    sInfo: "Total Records: _TOTAL_",
+                },
+                columnDefs: [
+                    { "orderable": false, "targets": 4 }
+                ],
+                columns: [
+                    {
+                        data: 'serviceRequestId',
+                        name: 'ServiceRequestId',
+                    },
+                    {
+                        name: 'ServiceDateTime',
+                        render: function (data, type, row) {
+                            return "<img src='../img/admin-panel/calendar2.png' class='me-1' alt='calenderIcon'><span> " +
+                                ServiceStartDate(row.serviceStartDate) + "</span ><br> " +
+                                "<img src='../img/admin-panel/layer-14.png' class='me-1' alt='clockIcon'>" +
+                                ServiceTime(row.serviceStartDate, 0) + " - " +
+                                ServiceTime(row.serviceStartDate, row.serviceHours);
+                        }
+                    },
+                    {
+                        name: 'CustomerName',
+                        render: function (data, type, row) {
+                            return "<div class='align-items-center d-flex'><img src='../img/admin-panel/layer-15.png' class='me-2' /><div>" +
+                                row.user.firstName + " " + row.user.lastName + "<br>" +
+                                row.serviceRequestAddresses[0].addressLine1 + " " + row.serviceRequestAddresses[0].addressLine2 + "<br>" +
+                                row.serviceRequestAddresses[0].postalCode + " " + row.serviceRequestAddresses[0].city + "</div></div>";
+                        }
+                    },
+                    {
+                        name: 'totalcost',
+                        render: function (data, type, row) {
+                            return row.totalCost + "$";
+                        }
+                    },
+                    {
+                        render: function (data, type, row) {
+                            
+                            var serviceDate = new Date(row.serviceStartDate);
+                            serviceDate.setHours(serviceDate.getHours() + row.serviceHours);
+                            
+                            var currentDate = new Date();
+
+                            var htmlContent = "";
+
+                            if (serviceDate < currentDate) {
+                                htmlContent = "<button class='btn rounded-pill button-primary fs-14 p-1 pe-2 ps-2 me-1 mb-1' onclick='CompeleteServiceRequest(" + row.serviceRequestId + ")' >Compelete</button>";
+                            }
+
+                            htmlContent = htmlContent + "<button class='cancel-btn fs-14 p-1 pe-2 ps-2' onclick='CancelServiceRequest(" + row.serviceRequestId + ")' >Cancel</button>";
+
+                            return htmlContent;
+                        }
+                    }
+                ],
+                dom: '<"top">rt<"bottom"lip><"clear">',
+                responsive: true,
+                order: [[0, "desc"]]
+            });
+
+            //click on row column
+            $('#tblUpcomingServices tbody').on('click', 'td', function () {
+
+                if ($(this).index() == 4) { 
+                    return;
+                }
+
+                var rowData = table.row(this).data();
+
+                $('#preloader').removeClass("d-none");
+
+                $.ajax({
+                    url: '/ServiceProvider/GetServiceRequestWithCustomerDetails',
+                    type: 'post',
+                    dataType: 'json',
+                    data: { "serviceRequestId": rowData.serviceRequestId },
+                    success: function (resp) {
+
+                        $('#preloader').addClass("d-none");
+                        
+                        $("#lblSpServiceRequestDateTime").html("<b>" + ServiceStartDate(resp.data.serviceStartDate) + "</b> " +
+                            "<b>" + ServiceTime(resp.data.serviceStartDate, 0) + "-" +
+                            ServiceTime(resp.data.serviceStartDate, resp.data.serviceHours) + "</b>");
+                        $("#lblSpDuration").text(resp.data.serviceHours);
+                        $("#lblSpServiceRequestId").text(resp.data.serviceRequestId);
+
+                        $("#lblSpExtraServices").text(resp.extraServiceRequest);
+                        $("#lblSpTotalAmount").html("<b>" + resp.data.totalCost + " $</b>");
+
+                        $("#lblSpCustomerName").text(resp.data.user.firstName + " " + resp.data.user.lastName);
+
+                        var serviceAddress = resp.data.serviceRequestAddresses[0];
+
+                        $("#lblSpServiceAddress").text(serviceAddress.addressLine1 + " " + serviceAddress.addressLine2 + ", " + serviceAddress.postalCode + " " + serviceAddress.city)
+                        $("#lblSpPhone").text(serviceAddress.mobile);   
+                        $("#lblSpEmail").text(resp.data.user.email);
+
+                        $("#lblSpComments").text(resp.data.comments);
+
+                        if (resp.data.hasPets == false) {
+                            $("#lblSpHasPet").html("<img src='../img/admin-panel/not-included.png'/> I don't have pets at home");
+                        }
+                        else {
+                            $("#lblSpHasPet ").html("<img src='../img/admin-panel/included.png'/> I have pets at home");
+                        }
+
+                        var divBottomBtnHtmlContent = "<hr>";
+
+                        var serviceDate = new Date(resp.data.serviceStartDate);
+                        serviceDate.setHours(serviceDate.getHours() + resp.data.serviceHours);
+
+                        var currentDate = new Date();
+
+                        divBottomBtnHtmlContent = divBottomBtnHtmlContent + "<button class='cancel-btn fs-16 me-2 p-3 pt-2 pb-2' " +
+                            " onclick='CancelServiceRequest(" + resp.data.serviceRequestId + ")' > <img src='../img/admin-panel/close-icon-small.png' class='me-1' /> Cancel</button>";
+                        console.log(serviceDate < currentDate);
+                        if (serviceDate < currentDate) {
+                            divBottomBtnHtmlContent = divBottomBtnHtmlContent + "<button class='btn rounded-pill button-primary fs-16 p-3 pt-2 pb-2' " +
+                                " onclick='CompeleteServiceRequest(" + resp.data.serviceRequestId + ")' > <img src='../img/admin-panel/tick.png' class='me-1' /> Compelete</button>";
+                        }
+                          
+                        $("#divBottomBtn").html(divBottomBtnHtmlContent);
+
+                        $('#SpPanelServiceDetailModel').modal({
+                            backdrop: 'static',
+                            keyboard: false
+                        });
+                        $('#SpPanelServiceDetailModel').modal('show');
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            });
+
+        });
+
+        function AcceptServiceRequest(serviceRequestId, recordVersion) {
+
+            var serviceRequest = {};
+
+            serviceRequest.serviceRequestId = serviceRequestId;
+            serviceRequest.recordVersion = recordVersion;
+
+            $('#preloader').removeClass("d-none");
+
+            $.ajax({
+                url: '/ServiceProvider/AcceptServiceRequest',
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(serviceRequest),
+                success: function (resp) {
+
+                    $('#preloader').addClass("d-none");
+
+                    console.log(resp);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+        }
+
+        function CompeleteServiceRequest(serviceRequestId) {
+            $('#preloader').removeClass("d-none");
+
+            $.ajax({
+                url: '/ServiceProvider/CompeleteServiceRequest',
+                type: 'post',
+                dataType: 'json',
+                data: { "serviceRequestId": serviceRequestId },
+                success: function (resp) {
+
+                    $('#preloader').addClass("d-none");
+
+                    $('#tblUpcomingServices').DataTable().ajax.reload();
+                    $('#SpPanelServiceDetailModel').modal('hide');
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        function CancelServiceRequest(serviceRequestId) {
+            $('#preloader').removeClass("d-none");
+
+            $.ajax({
+                url: '/ServiceProvider/CancelServiceRequest',
+                type: 'post',
+                dataType: 'json',
+                data: { "serviceRequestId": serviceRequestId },
+                success: function (resp) {
+
+                    $('#preloader').addClass("d-none");
+                        
+                    $('#tblUpcomingServices').DataTable().ajax.reload();
+                    $('#SpPanelServiceDetailModel').modal('hide');
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+    </script>
+}

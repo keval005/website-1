@@ -1,0 +1,252 @@
+﻿.contact-us .contact-detail {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+    .contact-us .contact-detail .contact-detail-box {
+        margin: 0px 10px;
+    }
+
+        .contact-us .contact-detail .contact-detail-box .img-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+
+        .contact-us .contact-detail .contact-detail-box p {
+            font-size: 16px;
+            line-height: 24px;
+            color: #4f4f4f;
+        }
+
+.contact-us-form form .contact-title {
+    color: #4f4f4f;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.contact-us-form form select {
+    height: 46px;
+    font-size: 16px;
+    color: #798289;
+}
+
+.contact-us-form .lblAttachment {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #646464;
+}
+
+.contact-us-form .lblUpload {
+    border: 1px solid #c6c6c6;
+    color: #666;
+    transition: all .3s ease;
+    background: 0 0;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+    .contact-us-form .lblUpload:hover {
+        color: #1d7a8c !important;
+        border-color: #1d7a8c !important;
+        box-shadow: none !important;
+        background: 0 0 !important;
+        outline: 0 !important;
+        opacity: 1;
+    }
+
+.contact-us-form form .btn-submit {
+    background-color: #1d7a8c;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 50px;
+}
+
+.about-page .about-page-content p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #646464;
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+.register-now-page .navbar-brand img {
+    height: 102px;
+    width: 138px;
+}
+
+.register-now {
+    min-height: 100vh;
+}
+
+    .register-now .register-now-content {
+        background: url("../img/become-a-pro/become-a-pro-banner.png") no-repeat center;
+        background-size: cover;
+        height: 100%;
+        padding-bottom: 30px;
+        padding-top: 152px;
+    }
+
+    .register-now .register-now-form {
+        padding: 23px 36px 19px 36px;
+        background-color: #fff;
+        border-radius: 4px;
+        margin-bottom: 63px;
+    }
+
+        .register-now .register-now-form h3 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .register-now .register-now-form .form-input-text {
+            margin-bottom: 15px;
+        }
+
+            .register-now .register-now-form .form-input-text .input-group {
+                height: 100%;
+            }
+
+            .register-now .register-now-form .form-input-text input {
+                font-size: 16px;
+                line-height: 24px;
+                padding: 16px;
+            }
+
+        .register-now .register-now-form .form-check {
+            margin-bottom: 10px;
+        }
+
+            .register-now .register-now-form .form-check .form-check-input {
+                margin-top: 2px;
+                height: 20px;
+                width: 20px;
+            }
+
+            .register-now .register-now-form .form-check .form-check-label {
+                font-size: 16px;
+                line-height: 24px;
+                color: #4f4f4f;
+            }
+
+            .register-now .register-now-form .form-check a {
+                color: #1fb6ff;
+                text-decoration: none;
+            }
+
+        .register-now .register-now-form .submitBox {
+            margin-top: 20px;
+        }
+
+            .register-now .register-now-form .submitBox button {
+                font-size: 16px;
+                line-height: 24px;
+                background-color: #1d7a8c;
+                padding: 13px 19px 14px 27px;
+                border-radius: 46px;
+                color: white;
+                border: 0px;
+                font-weight: bold;
+            }
+
+                .register-now .register-now-form .submitBox button img {
+                    margin-left: 8px;
+                }
+
+    .register-now .register-now-content .down-arrow {
+        border: 1px solid white;
+        padding: 9px 11px;
+        border-radius: 50%;
+        color: #ffffff00;
+    }
+
+.how-it-works .forma-1 {
+    top: 20px;
+    height: 219px;
+    width: 147px;
+    object-fit: cover;
+    object-position: right;
+}
+
+.how-it-works .forma-2 {
+    top: 454px;
+    height: 273px;
+    width: 188px;
+    object-fit: cover;
+    object-position: right;
+}
+
+.how-it-works .forma-3 {
+    top: 890px;
+    height: 303px;
+    width: 165px;
+    object-fit: cover;
+    object-position: right;
+}
+
+.how-it-works .forma-4 {
+    top: 20px;
+    height: 236px;
+    width: 214px;
+    object-fit: cover;
+    object-position: left;
+}
+
+.how-it-works .forma-5 {
+    top: 426px;
+    height: 255px;
+    width: 143px;
+    object-fit: cover;
+    object-position: left;
+}
+
+.how-it-works .forma-6 {
+    top: 962px;
+    height: 234px;
+    width: 198px;
+    object-fit: cover;
+    object-position: left;
+}
+
+.how-it-works h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #4f4f4f;
+}
+
+.how-it-works .registration-process .information {
+    width: 50%;
+}
+
+    .how-it-works .registration-process .information h3 {
+        font-size: 30px;
+        font-weight: bold;
+        color: #4f4f4f;
+        line-height: 36px;
+        margin-bottom: 16px;
+    }
+
+    .how-it-works .registration-process .information p {
+        font-size: 18px;
+        font-weight: 400;
+        color: #4f4f4f;
+        margin-bottom: 48px;
+    }
+
+    .how-it-works .registration-process .information a {
+        font-size: 18px;
+        font-weight: 400;
+        color: #4f4f4f;
+        text-decoration: none;
+    }
+
+.how-it-works .registration-process .registration-process-box {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,100 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var user = Context.Session.GetString("User");
+    SessionUser sessionUser = new SessionUser();
+
+    if (user != null)
+    {
+        sessionUser = JsonConvert.DeserializeObject<SessionUser>(user);
+    }
+}
+
+<section class="welcome-text text-center" id="welcome-text">
+    <h1>Welcome, <span>@sessionUser.UserName</span></h1>
+</section>
+
+<section class="main-body" id="main-body">
+    <div class="max-width-1400">
+        <div class="d-flex">
+            <div class="side-bar">
+                <ul class="side-bar-menu h-100">
+                    <li class="nav-item"><a asp-controller="@sessionUser.UserType" asp-action="Dashboard" class="nav-link">Dashboard</a></li>
+
+                    @if (sessionUser.UserType == UserTypeEnum.Customer.ToString())
+                    {
+                        <partial name="_UserLayoutCustomerSideBar" />
+                    }
+                    else if (sessionUser.UserType == UserTypeEnum.ServiceProvider.ToString())
+                    {
+                        <partial name="_UserLayoutServiceProviderSideBar" />
+                    }
+
+                </ul>
+            </div>
+            <div class="main-content">
+                @RenderBody()
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="modal" id="CustServiceDetailModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close model-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h3 class="mb-3">Service Details</h3>
+                <span class="text service-date"><label id="lblServiceRequestDateTime"></label></span>
+                <span class="text"><b>Duration:</b> <label id="lblDuration"></label> Hrs</span>
+                <hr />
+                <span class="text"><b>Service Id:</b> <label id="lblServiceRequestId"></label></span>
+                <span class="text"><b>Extras:</b> <label id="lblExtraServices" class="d-inline"></label></span>
+                <span class="text"><b>Net Amount :</b> <label id="lblTotalAmount" class="primary fs-20 ms-3"></label></span>
+                <hr />
+                <span class="text"><b>Service Address:</b> <label id="lblServiceAddress"></label></span>
+                <span class="text"><b>Phone:</b> <label id="lblPhone"></label></span>
+                <span class="text"><b>Email:</b> <label id="lblEmail"></label></span>
+                <hr />
+                <span class="text"><b>Comments:</b> <label id="lblComments"></label></span>
+                <span class="text"><label id="lblHasPet"></label></span>
+                <div id="divBtnCustServiceDetailModel"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="SpPanelServiceDetailModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close model-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h3 class="mb-3">Service Details</h3>
+                <span class="text service-date"><label id="lblSpServiceRequestDateTime"></label></span>
+                <span class="text"><b>Duration:</b> <label id="lblSpDuration"></label> Hrs</span>
+                <hr />
+                <span class="text"><b>Service Id:</b> <label id="lblSpServiceRequestId"></label></span>
+                <span class="text"><b>Extras:</b> <label id="lblSpExtraServices" class="d-inline"></label></span>
+                <span class="text"><b>Net Amount :</b> <label id="lblSpTotalAmount" class="primary fs-20 ms-3"></label></span>
+                <hr />
+                <span class="text"><b>Customer Name:</b> <label id="lblSpCustomerName"></label></span>
+                <span class="text"><b>Service Address:</b> <label id="lblSpServiceAddress"></label></span>
+                <span class="text"><b>Phone:</b> <label id="lblSpPhone"></label></span>
+                <span class="text"><b>Email:</b> <label id="lblSpEmail"></label></span>
+                <hr />
+                <span class="text"><b>Comments:</b> <label id="lblSpComments"></label></span>
+                <span class="text"><label id="lblSpHasPet"></label></span>
+                <div id="divBottomBtn">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script src="~/js/UserScript.js"></script>
+    @RenderSection("UserLayoutScripts", required: false)
+}

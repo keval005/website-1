@@ -1,0 +1,114 @@
+﻿@model ContactViewModel
+
+@{
+    ViewData["Title"] = "Contact";
+}
+<section class="header-img">
+    <img src="~/img/contact/group-16_2.png" alt="">
+</section>
+
+<section class="contact-us pt-0" id="contact-us">
+    <div class="max-width-1180">
+        <div class="contact-content">
+            <div class="text-center position-relative mb-75">
+                <h2 class="star-title">Contact us</h2>
+            </div>
+            <div class="contact-detail pb-60">
+                <div class="contact-detail-box">
+                    <div class="img-box">
+                        <img src="~/img/contact/forma-1.png" alt="">
+                    </div>
+                    <p class="text-center">
+                        1111 Lorem ipsum text 100,<br>
+                        Lorem ipsum AB
+                    </p>
+                </div>
+                <div class="contact-detail-box">
+                    <div class="img-box">
+                        <img src="~/img/contact/phone-call.png" alt="">
+                    </div>
+                    <p class="text-center">
+                        +49 (40) 123 56 7890<br>
+                        +49 (40) 987 56 0000
+                    </p>
+                </div>
+                <div class="contact-detail-box">
+                    <div class="img-box">
+                        <img src="~/img/contact/vector-smart-object.png" alt="">
+                    </div>
+                    <p class="text-center">
+                        info@helperland.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- contact us form -->
+<section class="contact-us-form mb-40" id="contact-us-form">
+    <div class="max-width-654">
+        <form class="row g-3" asp-controller="Home" asp-action="contact" method="post" enctype="multipart/form-data">
+            <div class="col-12 text-center">
+                <h3 class="contact-title">Get in touch with us</h3>
+            </div>
+            <div class="col-md-6">
+                <input asp-for="FirstName" type="text" class="form-control" placeholder="First name">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <input asp-for="LastName" type="text" class="form-control" placeholder="Last name">
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">+49</span>
+                    <input type="text" asp-for="MobileNumber" class="form-control" placeholder="Mobile number" aria-label="Username"
+                           aria-describedby="basic-addon1">
+                </div>
+                <span asp-validation-for="MobileNumber" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <input asp-for="EmailAddress" type="text" class="form-control" placeholder="Email Address">
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <select asp-for="Subject" class="form-select" aria-label="Default select example">
+                    <option value="General">
+                        General
+                    </option>
+                    <option value="Inquiry">
+                        Inquiry
+                    </option>
+                    <option value="Renewal">
+                        Renewal
+                    </option>
+                    <option value="Revocation">
+                        Revocation
+                    </option>
+                </select>
+            </div>
+            <div class="col-12">
+                <textarea asp-for="Message" class="form-control" id="Textarea1" rows="5" placeholder="Message"></textarea>
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <label class="lblAttachment">Attachment</label>
+                <label for="inputAttachment" class="lblUpload">Upload</label>
+                <input asp-for="Attachment" type="file" id="inputAttachment" hidden />
+                <label id="lblAttachmentName"></label>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn rounded-pill btn-submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Map -->
+<section class="contact-us-map" id="contact-us-map">
+    <div class="pin d-flex justify-content-center align-items-center h-100">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2525.274682710308!2d7.130329051387604!3d50.73339407941482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bee13f0afebfb1%3A0x7caeb94f4c1042fc!2sK%C3%B6nigswinterer%20Str.%20116%2C%2053227%20Bonn%2C%20Germany!5e0!3m2!1sen!2sin!4v1643083702948!5m2!1sen!2sin" width="1560" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+<partial name="_NewsLetter" />

@@ -1,0 +1,86 @@
+﻿@{
+    var user = Context.Session.GetString("User");
+    SessionUser sessionUser = new SessionUser();
+
+    if (user != null)
+    {
+        sessionUser = JsonConvert.DeserializeObject<SessionUser>(user);
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - HelperLand</title>
+    <link rel="icon" type="image/x-icon" href="~/img/logo/favicon_img.png">
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link href="~/lib/limonte-sweetalert2/sweetalert2.css" rel="stylesheet" />
+    <link href="~/lib/select2/css/select2.css" rel="stylesheet" />
+    <link href="https://raw.githack.com/ttskch/select2-bootstrap4-theme/master/dist/select2-bootstrap4.css" rel="stylesheet">
+    <link href="~/lib/bootstrap-star-rating/css/star-rating.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-star-rating/themes/krajee-svg/theme.css" rel="stylesheet" />
+    <link href="~/css/Admin.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-xl navbar-light fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown1" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand p-0" href="#">helperland</a>
+            <ul class="navbar-nav ms-auto flex-row">
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <img src="~/img/admin-panel/admin-user.png" alt="">
+                        @sessionUser.UserName
+                    </a>
+                </li>
+                <li class="nav-item me-2">
+                    <a class="nav-link" asp-action="Logout" asp-controller="Account">
+                        <img src="~/img/admin-panel/logout.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="sidebar navbar navbar-expand-xl p-0">
+        <div class="collapse navbar-collapse" id="sideBarAdminPanel">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Admin" asp-action="ServiceRequests">Service Requests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Admin" asp-action="UserManagement">User Management</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        @RenderBody()
+    </div>
+
+    <div class="footer pt-0">
+        ©2018 Helperland. All rights reserved.
+    </div>
+    <partial name="_ValidationScriptsPartial" />
+
+    <script src="~/js/admin-main.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="https://kit.fontawesome.com/ae6d6e0254.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script src="~/lib/limonte-sweetalert2/sweetalert2.js"></script>
+    <script src="~/lib/select2/js/select2.js"></script>
+    <script src="~/lib/bootstrap-star-rating/js/star-rating.js"></script>
+    <script src="~/lib/bootstrap-star-rating/themes/krajee-svg/theme.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

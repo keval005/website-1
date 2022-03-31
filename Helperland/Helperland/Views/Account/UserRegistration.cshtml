@@ -1,0 +1,61 @@
+﻿@model UserRegistrationViewModel
+
+@{
+    ViewData["Title"] = "Create an account";
+}
+
+<section class="User-registration mt-40 Registration-Reset" id="User-registration">
+    <div class="max-width-1104">
+        <div class="text-center position-relative mb-75 mt-40">
+            <h2 class="star-title">Create an account</h2>
+        </div>
+
+        <form class="row g-3" asp-controller="Account" asp-action="UserRegistration" method="post" enctype="multipart/form-data">
+            <div class="col-md-12 m-0 @( TempData["SuccessMessage"] == null ? "d-none" : "")">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["SuccessMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input asp-for="FirstName" type="text" class="form-control" placeholder="First name">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <input asp-for="LastName" type="text" class="form-control" placeholder="Last name">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <input asp-for="Email" type="text" class="form-control" placeholder="E-mail Address">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">+49</span>
+                    <input type="text" asp-for="MobileNumber" class="form-control" placeholder="Mobile number" aria-label="Username"
+                           aria-describedby="basic-addon1">
+                </div>
+                <span asp-validation-for="MobileNumber" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password">
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="mb-1 form-check ms-2">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">I have read the <a href="#">privacy policy</a>.</label>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="register-button">Register</button>
+            </div>
+            <div class="col-12 text-center">
+                Already registered? <a class="mb-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login now</a>
+            </div>
+        </form>
+
+    </div>
+</section>

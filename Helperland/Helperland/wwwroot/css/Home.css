@@ -1,0 +1,428 @@
+﻿.home {
+    min-height: 100vh;
+    /* height: 100vh; */
+}
+
+    .home .home-content {
+        background: url("../img/home/group-35.png") no-repeat center;
+        background-size: cover;
+        height: 100%;
+        display: flex;
+        padding: 0px 30px;
+        flex-direction: column;
+        justify-content: end;
+        color: white;
+        padding-bottom: 25px;
+        padding-top: 330px;
+    }
+
+        .home .home-content .home-text h2 {
+            line-height: 54px;
+            font-size: 50px;
+        }
+
+        .home .home-content .home-text {
+            padding-left: 38px;
+        }
+
+            .home .home-content .home-text ul {
+                padding-left: 0px;
+            }
+
+                .home .home-content .home-text ul li {
+                    list-style: none;
+                    line-height: 22px;
+                    font-size: 16px;
+                }
+
+                    .home .home-content .home-text ul li::before {
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        content: "\f00c";
+                        padding-right: 12px;
+                    }
+
+        .home .home-content .button a {
+            border: 1px solid white;
+            background-color: #00607287;
+            color: white;
+            border-radius: 54px;
+            font-size: 18px;
+            line-height: 24px;
+            padding: 18px 32px;
+            text-decoration: none;
+        }
+
+            .home .home-content .button a:hover {
+                background-color: white;
+                color: #006072;
+            }
+
+        .home .home-content .payment-process {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 35px;
+        }
+
+            .home .home-content .payment-process .payment-process-box {
+                margin-bottom: 7px;
+            }
+
+            .home .home-content .payment-process .img-size {
+                width: 50px;
+            }
+
+            .home .home-content .payment-process .arrow img {
+                width: 70px;
+            }
+
+            .home .home-content .payment-process .icon-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 70px;
+                margin-bottom: 15px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .home .home-content .payment-process h6 {
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+            .home .home-content .payment-process .rotateImg {
+                transform: rotateX(180deg);
+            }
+
+        .home .home-content .down-arrow {
+            border: 1px solid white;
+            padding: 9px 11px;
+            border-radius: 50%;
+            color: #ffffff00;
+        }
+/* -- home Section end */
+
+/* Why helperland */
+
+.helperland .row .padding-lr-10 {
+    padding: 0px 10px;
+}
+
+.helperland .row img {
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+}
+
+.helperland .row h3 {
+    color: #565656;
+    font-size: 30px;
+    font-weight: bold;
+    height: 60px;
+}
+
+.helperland .row p {
+    color: #565656;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+/* text-blog */
+
+.text-blog .row h3 {
+    font-size: 30px;
+    line-height: 36px;
+    color: #4f4f4f;
+}
+
+.text-blog .row p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #4f4f4f;
+}
+
+/* our-blog */
+
+.our-blog .card a {
+    text-decoration: none;
+    color: black;
+}
+
+    .our-blog .card a img {
+        margin-left: 4px;
+    }
+
+.our-blog .card .card-body h5 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #3d4046;
+}
+
+.our-blog .card .card-body small {
+    font-size: 13px;
+    color: #a3a3a3;
+}
+
+.our-blog .card .card-body .card-text {
+    font-size: 16px;
+    line-height: 22px;
+    color: #565656;
+}
+
+.customer-review .card {
+    border-left: 3px solid #1d7a8c;
+}
+
+    .customer-review .card .card-body h5 {
+        font-size: 20px;
+        line-height: 24px;
+        color: #4f4f4f;
+    }
+
+    .customer-review .card .card-body small {
+        color: #8e8e8e;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .customer-review .card .card-body p {
+        color: #565656;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .customer-review .card a {
+        text-decoration: none;
+        color: black;
+    }
+
+.faq .faq-questions p {
+    color: #646464;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.faq .faq-questions .nav .nav-link {
+    border-radius: 0px;
+    background-color: #f6f6f6;
+    font-size: 24px;
+    line-height: 52px;
+    color: #646464;
+    border-bottom: 4px solid #1d7a8c;
+}
+
+    .faq .faq-questions .nav .nav-link.active {
+        color: #ffffff;
+        background-color: #1d7a8c;
+    }
+
+.faq .faq-questions .accordion .accordion-item {
+    border: none;
+}
+
+.faq .faq-questions .accordion .accordion-button {
+    color: #646464;
+    font-size: 16px;
+    padding-left: 0px;
+    font-weight: bold;
+}
+
+    .faq .faq-questions .accordion .accordion-button::before {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        content: "";
+        background-image: url("../img/faq/right-arrow.png");
+        background-repeat: no-repeat;
+        background-size: 1.25rem;
+        transition: transform 0.2s ease-in-out;
+        margin-right: 15px;
+    }
+
+    .faq .faq-questions .accordion .accordion-button:not(.collapsed) {
+        background-color: white;
+        box-shadow: none;
+        color: #646464;
+    }
+
+    .faq .faq-questions .accordion .accordion-button:focus {
+        border: none;
+        box-shadow: none;
+    }
+
+    .faq .faq-questions .accordion .accordion-button:not(.collapsed)::before {
+        transform: rotate(90deg);
+    }
+
+    .faq .faq-questions .accordion .accordion-button::after {
+        content: none;
+    }
+
+.faq .faq-questions .accordion .accordion-body {
+    font-size: 16px;
+    line-height: 24px;
+    color: #646464;
+    text-align: justify;
+    padding-top: 5px;
+    padding-left: 35px;
+}
+
+.prices .prices-content .card {
+    max-width: 553px;
+    min-height: 304px;
+    border-radius: 0px;
+    border: 1px solid #b0c9ce;
+    margin: 0 auto 50px auto;
+}
+
+    .prices .prices-content .card .card-header {
+        background-color: #1d7a8c;
+        font-size: 28px;
+        color: white;
+        border-radius: 0px;
+    }
+
+    .prices .prices-content .card .card-title {
+        font-size: 48px;
+        font-weight: bold;
+        color: #646464;
+        margin-bottom: 30px;
+    }
+
+        .prices .prices-content .card .card-title span {
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+    .prices .prices-content .card ul {
+        position: relative;
+        text-align: left;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+        .prices .prices-content .card ul li {
+            list-style: none;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 15px;
+        }
+
+            .prices .prices-content .card ul li::before {
+                position: absolute;
+                content: "";
+                display: inline-block;
+                background: url("../img/prices/forma-1_5.png");
+                height: 24px;
+                width: 24px;
+                left: 0;
+            }
+
+.prices .extra-services .service-box {
+    text-align: center;
+    width: 140px;
+    margin: 0px 5px 10px 5px;
+}
+
+    .prices .extra-services .service-box .img-box {
+        width: 109px;
+        height: 109px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #b0c9ce;
+        border-radius: 50%;
+        margin: 0 auto 17px auto;
+    }
+
+    .prices .extra-services .service-box .heading {
+        font-size: 16px;
+        color: #646464;
+        line-height: 22px;
+        font-weight: 400;
+    }
+
+    .prices .extra-services .service-box .time-text {
+        font-size: 18px;
+        line-height: 26px;
+        color: #1d7a8c;
+    }
+
+.cleaning-service .star-title::after {
+    background-color: #f6f6f6;
+}
+
+.cleaning-service .cleaning-service-box {
+    max-width: 360px;
+    margin: 0px 15px 10px 15px;
+}
+
+    .cleaning-service .cleaning-service-box img {
+        width: 100%;
+    }
+
+    .cleaning-service .cleaning-service-box h5 {
+        color: #4f4f4f;
+        font-size: 20px;
+        line-height: 24px;
+        margin: 18px 0;
+    }
+
+    .cleaning-service .cleaning-service-box ul {
+        position: relative;
+    }
+
+        .cleaning-service .cleaning-service-box ul li {
+            list-style: none;
+            font-size: 16px;
+            line-height: 24px;
+            color: #4f4f4f;
+            margin-bottom: 9px;
+            display: flex;
+            align-items: center;
+        }
+
+            .cleaning-service .cleaning-service-box ul li::before {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                background: url("../img/prices/right-arrow-grey.png") no-repeat center;
+                height: 24px;
+                width: 24px;
+                left: 0;
+            }
+
+.prices-why-helperland .prices-why-helperland-content {
+    display: flex;
+    justify-content: center;
+}
+
+.prices-why-helperland .card {
+    border: 0px;
+    width: 377px;
+    margin-bottom: 20px;
+}
+
+.prices-why-helperland .img-box {
+    max-width: 375px;
+    margin-bottom: 20px;
+}
+
+    .prices-why-helperland .img-box img {
+        width: 100%;
+    }
+
+.prices-why-helperland .card .card-title {
+    font-size: 20px;
+    line-height: 24px;
+    color: #646464;
+}
+
+.prices-why-helperland .card .card-text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #646464;
+    max-width: 290px;
+}

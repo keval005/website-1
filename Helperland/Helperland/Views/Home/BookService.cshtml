@@ -1,0 +1,437 @@
+﻿@{
+    ViewData["Title"] = "Book Service";
+
+    var user = Context.Session.GetString("User");
+    SessionUser sessionUser = new SessionUser();
+
+    if (user != null)
+    {
+        sessionUser = JsonConvert.DeserializeObject<SessionUser>(user);
+    }
+}
+<section class="header-img mt-37">
+    <img src="~/img/book-service/book-service-banner.jpg" alt="">
+</section>
+
+<section class="set-up-cleaning-services" id="set-up-cleaning-services">
+    <div class="max-width-1180">
+        <div class="text-center position-relative mb-75">
+            <h2 class="star-title">Set up your cleaning service</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+
+                <ul class="nav flex-nowrap nav-pills nav-fill mb-4" id="book-service-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="setup-service-tab" data-bs-toggle="pill"
+                                data-bs-target="#setup-service-tabContent" type="button" role="tab"
+                                aria-controls="setup-service-tabContent" aria-selected="true" onclick="SetupServiceTabClicked();">
+                            <img src="~/img/book-service/setup-service.png" alt="">
+                            <span>Setup Service</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="Schedule-and-Plan-tab" data-bs-toggle="pill"
+                                data-bs-target="#Schedule-and-Plan-tabContent" type="button" role="tab"
+                                aria-controls="Schedule-and-Plan-tabContent" aria-selected="false" onclick="ScheduleAndPlanTabClicked();">
+                            <img src="~/img/book-service/schedule.png" alt="">
+                            <span>Schedule & Plan</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="Your-Details-tab" data-bs-toggle="pill"
+                                data-bs-target="#Your-Details-tabContent" type="button" role="tab"
+                                aria-controls="Your-Details-tabContent" aria-selected="false" onclick="YourDetailsTabClicked();">
+                            <img src="~/img/book-service/details.png" alt="">
+                            <span>Your Details</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="Make-Payment-tab" data-bs-toggle="pill"
+                                data-bs-target="#Make-Payment-tabContent" type="button" role="tab"
+                                aria-controls="Make-Payment-tabContent" aria-selected="false">
+                            <img src="~/img/book-service/payment.png" alt="">
+                            <span>Make Payment</span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+
+                    <!-- 1st tab content -->
+                    <div class="tab-pane fade show active" id="setup-service-tabContent" role="tabpanel"
+                         aria-labelledby="setup-service-tab">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h6 class="fw-bold">Enter your Postal Code</h6>
+                            </div>
+                            <div class="col-sm-12 col-md-6 mt-3">
+                                <input type="text" id="PostalCode" name="PostalCode" class="form-control mb-2">
+                                <span id="PostalCodeErrorMessage" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 col-md-6 mt-3">
+                                <input class="button" type="button" onclick="CheckPostalCode()" value="Check Availability">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2nd tab content -->
+                    <div class="tab-pane fade" id="Schedule-and-Plan-tabContent" role="tabpanel"
+                         aria-labelledby="Schedule-and-Plan-tab">
+                        <div class="row">
+
+                            <div class="col-lg-12 col-xl-5 mb-2">
+                                <h6 class="fw-bold">When do you need the cleaner?</h6>
+                                <input type="date" class="form-control input-element width-135" id="ServiceDate" name="ServiceDate">
+                                <select class="form-select width-120" id="ServiceTime" name="ServiceTime">
+                                    @for (double i = 8; i <= 18; i = i + 0.5)
+                                    {
+                                        string[] number = i.ToString().Split(".");
+                                        <option value="@i"> @number[0]:@(number.Length == 2? "30" : "00") </option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-lg-12 col-xl-7">
+                                <h6 class="fw-bold">How long do you need your cleaner to stay?</h6>
+                                <select class="form-select width-100" id="ServiceHours" name="ServiceHours">
+                                    @for (double i = 3; i <= 12; i = i + 0.5)
+                                    {
+                                        string[] number = i.ToString().Split(".");
+                                        <option value="@i">@number[0].@(number.Length == 2? "5" : "0") Hrs</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <label id="lblServiceTimeErrorMessage" class="d-none text-danger"></label>
+
+                            <hr>
+
+                            <div class="col-md-12">
+                                <h6 class="fw-bold mb-3">
+                                    Extra Services
+                                </h6>
+
+                                <div class="d-flex justify-content-evenly flex-wrap">
+                                    <div class="service-box">
+                                        <input type="checkbox" name="ExtraServices" id="chkInsideCabinets"
+                                               class="d-none" value="InsideCabinets">
+                                        <label for="chkInsideCabinets">
+                                            <span class="img-box">
+                                                <img src="~/img/book-service/3.png" alt="">
+                                            </span>
+                                            <span class="heading mb-0">Inside cabinets</span>
+                                        </label>
+                                    </div>
+                                    <div class="service-box">
+                                        <input type="checkbox" name="ExtraServices" id="chkInsideFridge"
+                                               class="d-none" value="InsideFridge">
+                                        <label for="chkInsideFridge">
+                                            <span class="img-box">
+                                                <img src="~/img/book-service/5.png" alt="">
+                                            </span>
+                                            <span class="heading mb-0">Inside fridge</span>
+                                        </label>
+                                    </div>
+                                    <div class="service-box">
+                                        <input type="checkbox" name="ExtraServices" id="chkInsideOven"
+                                               class="d-none" value="InsideOven">
+                                        <label for="chkInsideOven">
+                                            <span class="img-box">
+                                                <img src="~/img/book-service/4.png" alt="">
+                                            </span>
+                                            <span class="heading mb-0">Inside oven</span>
+                                        </label>
+                                    </div>
+                                    <div class="service-box">
+                                        <input type="checkbox" name="ExtraServices" id="chkLaundryWashAndDry"
+                                               class="d-none" value="LaundryWashAndDry">
+                                        <label for="chkLaundryWashAndDry">
+                                            <span class="img-box">
+                                                <img src="~/img/book-service/2.png" alt="">
+                                            </span>
+                                            <span class="heading mb-0">Laundry wash & dry</span>
+                                        </label>
+                                    </div>
+                                    <div class="service-box">
+                                        <input type="checkbox" name="ExtraServices" id="chkInteriorWindows"
+                                               class="d-none" value="InteriorWindows">
+                                        <label for="chkInteriorWindows">
+                                            <span class="img-box">
+                                                <img src="~/img/book-service/1.png" alt="">
+                                            </span>
+                                            <span class="heading mb-0">Interior windows</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="col-md-12">
+                                <h6 class="fw-bold">Comments</h6>
+                                <textarea class="form-control" id="txtComment" rows="3"></textarea>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="chkHasPet">
+                                    <label class="form-check-label" for="chkHasPet">
+                                        I have pets at home
+                                    </label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="col-md-12 text-end">
+                                <button class="button" type="button" onclick="ScheduleAndPlanCompeleted(@sessionUser.UserID)">Continue</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 3rd tab content -->
+                    <div class="tab-pane fade" id="Your-Details-tabContent" role="tabpanel"
+                         aria-labelledby="Your-Details-tab">
+                        <h6 class="fw-bold">Enter your contact details, so we can serve you in better way!</h6>
+                        <div id="Your-Details-tabContent-ErrorMessage">
+                        </div>
+                        <ul class="address-box mt-4" id="customerAddressList">
+                        </ul>
+
+                        <button class="button button-outline" id="btn-Add-address" onclick="AddressBox(true)">+ Add New Address</button>
+
+                        <div class="Add-newAddress-box" id="address-form">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 mb-3">
+                                    <label class="form-label">Street name</label>
+                                    <input type="text" class="form-control" placeholder="Street name" id="UserStreetName" name="UserStreetName">
+                                    <span id="ErrorMessageUserStreetName" class="text-danger"></span>
+                                </div>
+                                <div class="col-sm-12 col-md-6 mb-3">
+                                    <label class="form-label">House number</label>
+                                    <input type="text" class="form-control" placeholder="House number" id="UserHouseNumber" name="UserHouseNumber">
+                                </div>
+                                <div class="col-sm-12 col-md-6 mb-3">
+                                    <label class="form-label">Postal code</label>
+                                    <input type="text" class="form-control" placeholder="Postal code" id="UserPostalCode" name="UserPostalCode" disabled>
+                                </div>
+                                <div class="col-sm-12 col-md-6 mb-3">
+                                    <label class="form-label">City</label>
+                                    <select class="form-select m-0" id="UserCity" name="UserCity">
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 col-md-6 mb-3">
+                                    <label class="form-label">Phone number</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">+49</span>
+                                        <input type="text" class="form-control" id="UserPhoneNumber" name="UserPhoneNumber" placeholder="Phone Number" aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <span id="ErrorMessageUserPhoneNumber" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="button" onclick="AddNewCustomerAddress()">Save</button>
+                                    <a class="button button-outline ms-3 text-decoration-none" onclick="AddressBox(false)">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="w-100">
+
+                        <div class="col-md-12 text-end">
+                            <button class="button" onclick="SelectCustomerAddress()">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- 4rth tab content -->
+                    <div class="tab-pane fade" id="Make-Payment-tabContent" role="tabpanel"
+                         aria-labelledby="Make-Payment-tab">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h6 class="fw-bold">Pay securely with Helperland payment gateway!</h6>
+                            </div>
+                            <div class="col-sm-12 col-md-5">
+                                <label class="form-label">Promo code (optional)</label>
+                                <input type="text" id="PromoCode" name="PromoCode" class="form-control me-3" placeholder="Promo code (optional)">
+
+                            </div>
+                            <div class="align-items-end col-md-3 col-sm-12 d-flex mt-3">
+                                <button class="button button-outline">Apply</button>
+                            </div>
+
+                            <hr />
+
+                            <div class="col-md-12 mb-3 position-relative">
+                                <input type="text" id="CardNumber" name="CardNumber" class="form-control card-number" placeholder="Card number" value="1234123412341234" />
+                                <img src="~/img/book-service/credit-card-inputTagImg.png" class="img-card-inputTag" />
+                                <input type="text" id="CardExpiryDate" name="CardExpiryDate" class="form-control expiry-date" placeholder="MM / YY" value="03/2023" />
+                                <input type="text" id="CardCVC" name="CardCVC" class="form-control cvc" placeholder="CVC" value="123"/>
+                                <span id="ErrorMessageCardNumber" class="text-danger"></span>
+                                <span id="ErrorMessageCardExpiryDate" class="text-danger"></span>
+                                <span id="ErrorMessageCardCVC" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="float-end">
+                                    <small>Accepted cards:</small><br />
+                                    <img src="~/img/book-service/cardImg.png" class="width-100 " />
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="col-md-12">
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" id="TermsAndCondition">
+                                    <label class="form-check-label" for="TermsAndCondition">
+                                        <span id="ErrorMessageTermsAndCondition" class="text-danger"></span>I accepted <a href="#">terms and conditions</a>, the <a href="#">cancellation policy</a> and the <a href="#">privacy policy</a>. I confirm that Helperland starts to execute the contract before the expiry of the withdrawal period and I lose my right of withdrawal as a consumer with full performance of the contract.
+                                    </label>
+                                    
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="col-md-12 text-end">
+                                <button class="button" onclick="CompleteBooking()">Compelete Booking</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 d-none d-md-block">
+                <div class="card">
+                    <div class="card-header border-0">
+                        Payment Summary
+                    </div>
+                    <div class="card-body border-bottom">
+                        <p class="mb-1"><label id="lblServiceDate"></label></p>
+
+                        <h5>Duration</h5>
+                        <p class="mb-1">
+                            Basic
+                            <label id="lblBasicServiceHours">0 Hrs</label>
+                        </p>
+                        <label id="lblExtraServices" class="w-100 d-none"></label>
+                        <hr class="mt-2 mb-2">
+                        <p class="fw-bold mb-0">
+                            Total Service Time
+                            <label id="lblTotalServiceTime">0 Hrs</label>
+                        </p>
+                    </div>
+                    <div class="card-body border-bottom">
+                        <p class="mb-1">
+                            Per cleaning
+                            <label class="fw-bold" id="lblPerCleaning">$0</label>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <p class="total-payment align-items-center mb-0">
+                            Total Payment
+                            <label class="fw-bold" id="lblTotalPayment">$0</label>
+                        </p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <p class="mb-1 mt-1 d-flex"><i class="far fa-smile"></i> See what is always included</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4 mb-3">
+                    <h5>Questions?</h5>
+                </div>
+
+                <div class="accordion mb-3" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What's included in a cleaning?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body pt-0">
+                                Bedroom, Living Room & Common Areas,Bathrooms,Kitchen,Extras
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Which Helperland professional will come to my place?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body pt-0">
+                                Helperland has a vast network of experienced, top-rated cleaners. Based on the time and date of your request, we work to assign the best professional available.Like working with a specific pro? Add them to your Pro Team from the mobile app and they'll be requested first for all future bookings.You will receive an email with details about your professional prior to your appointment.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Can I skip or reschedule bookings?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body pt-0">
+                                You can reschedule any booking for free at least 24 hours in advance of the scheduled start time. If you need to skip a booking within the minimum commitment, we’ll credit the value of the booking to your account. You can use this credit on future cleanings and other Helperland services.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a asp-controller="Home" asp-action="faq" class="link-help">For more help</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Confirm Service Time-->
+<div class="modal" id="ConfirmServiceTimeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-max-width-360px">
+            <div class="modal-body p-4">
+                <button type="button" class="btn-close model-btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="CancelConfirmServiceTime()"></button>
+                <h3>Confirm Service Time</h3>
+
+                <div class="mb-4">
+                    Booking time is less than recommended, we may not be able to finish the job. Please confirm if you wish to proceed with your booking?
+                </div>
+
+                <button type="button" class="model-button mb-2" onclick="ConfirmServiceTime()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Book Service Model-->
+<div class="modal" id="BookServiceMessageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-max-width-360px">
+            <div class="modal-body p-4 text-center">
+                <a class="btn-close model-btn-close text-decoration-none" asp-action="Dashboard" asp-controller="Customer"></a>
+                
+                <span class="imgCircle mt-4 mb-4">
+                    <img src="~/img/book-service/correct-white-medium.png" />
+                </span>
+                
+                <h3>Booking has been successfully submited</h3>
+
+                <div class="mb-4">
+                    Service Request Id : <label id="lblServiceRequestId"></label>
+                </div>
+
+                <div class="mb-3">
+                    <a class="model-button mb-2 w-auto text-decoration-none" asp-action="Dashboard" asp-controller="Customer">Ok</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/BookServiceScript.js"></script>
+}

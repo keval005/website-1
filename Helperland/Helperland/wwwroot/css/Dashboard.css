@@ -1,0 +1,732 @@
+﻿.main-content #tbl-service-history tr td:nth-child(3) {
+    text-align: center;
+}
+
+#tblCurrentServiceRequest tr td:nth-child(1),
+#tblCurrentServiceRequest tr td:nth-child(4),
+#tblCurrentServiceRequest tr td:nth-child(5) {
+    text-align: center;
+}
+
+#tblCurrentServiceRequest tr td:nth-child(3) {
+    min-width: 195px;
+}
+
+#tblCurrentServiceRequest tr td:nth-child(5) {
+    min-width: 125px;
+}
+
+
+.my-account {
+    width: 100%;
+}
+
+    .my-account .nav-link {
+        font-weight: 700;
+        background-color: #fff;
+        color: #646464;
+        border-bottom: 4px solid #e1e1e1;
+        border-radius: 0px !important;
+    }
+
+    .my-account .nav-pills .nav-link.active,
+    .my-account .nav-pills .nav-link:hover {
+        background-color: #fff;
+        color: #1d7a8c;
+        border-bottom: 4px solid #1d7a8c !important;
+        border-radius: 0px !important;
+    }
+
+    .my-account .small-select-tag {
+        padding: 10px 23px 10px 6px !important;
+        background-position: right 6px center !important;
+    }
+
+
+    .my-account .tab-icon {
+        margin: auto;
+        height: 26px;
+        width: 24px;
+        background-repeat: no-repeat;
+        background-size: 24px;
+        background-position: 0 0;
+    }
+
+    .my-account .my-detail-tabIcon {
+        background-image: url(../img/admin-panel/my-account-details.png);
+    }
+
+    .my-account .my-addresses-tabIcon {
+        background-image: url(../img/admin-panel/my-account-address.png);
+    }
+
+    .my-account .my-change-password-tabIcon {
+        background-image: url(../img/admin-panel/my-account-password.png);
+    }
+
+    .my-account .nav-link.active .my-detail-tabIcon {
+        background-image: url(../img/admin-panel/my-account-details.png);
+        background-position: 0 -26px;
+    }
+
+    .my-account .nav-link.active .my-addresses-tabIcon {
+        background-image: url(../img/admin-panel/my-account-address.png);
+        background-position: 0 -26px;
+    }
+
+    .my-account .nav-link.active .my-change-password-tabIcon {
+        background-image: url(../img/admin-panel/my-account-password.png);
+        background-position: 0 -26px;
+    }
+
+#my-addresses table thead {
+    color: #646464;
+    background: #f3f3f3;
+    border-bottom: 2px solid #e1e1e1;
+}
+
+#my-addresses table th,
+#my-addresses table td {
+    padding-left: 15px;
+}
+
+#my-addresses tbody {
+    border-top: 0px !important;
+}
+
+#my-addresses .actionIcon {
+    color: transparent;
+    border-radius: 25px;
+}
+
+    #my-addresses .actionIcon.editIcon {
+        padding: 10px 8px 10px 10px;
+    }
+
+    #my-addresses .actionIcon.deleteIcon {
+        padding: 10px 9px;
+    }
+
+    #my-addresses .actionIcon:hover {
+        background-color: #f3f3f3;
+    }
+
+
+.my-account .my-setting-title {
+    color: #646464;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dcdcdc;
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+
+.my-account .my-detail-avatar-img {
+    height: 70px;
+    width: 70px;
+    background: #fff;
+}
+
+.my-account .form-check-inline {
+    margin-right: 5px;
+}
+
+.my-account .select-avatar-img {
+    height: 85px;
+    margin: 5px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+}
+
+.my-account input[name="sp-avatar"]:checked ~ label .select-avatar-img {
+    border: 3px solid #1D7A8c;
+}
+
+.main-content #tblUpcomingServices tr td:nth-child(1),
+.main-content #tblUpcomingServices tr td:nth-child(4),
+.main-content #tblUpcomingServices tr td:nth-child(5) {
+    text-align: center;
+}
+
+.main-content #tblNewServiceRequests tr td:nth-child(1),
+.main-content #tblNewServiceRequests tr td:nth-child(4) {
+    text-align: center;
+}
+
+.main-content #tblUpcomingServices tr td:nth-child(3) img {
+    margin-bottom: 5px;
+}
+
+
+#tblServiceHistory tbody tr td:nth-child(1) {
+    min-width: 110px !important;
+}
+
+#tblServiceHistory tbody tr td:nth-child(2) {
+    min-width: 140px !important;
+}
+
+#tblServiceHistory tbody tr td:nth-child(3) {
+    min-width: 195px !important;
+}
+
+
+.main-content #tblServiceHistory tr td:nth-child(1) {
+    text-align: center;
+}
+
+
+.rating-table {
+    border-spacing: 0px 15px !important;
+    border: 0px !important
+}
+
+    .rating-table thead {
+        display: none;
+    }
+
+    .rating-table tbody tr {
+        border: 1px solid #e1e1e1 !important
+    }
+
+        .rating-table tbody tr td {
+            padding: 0px;
+            border: 0px !important;
+        }
+
+        .rating-table tbody tr .content-box {
+            padding: 12px;
+            border: 1px solid #ececec;
+        }
+
+        .rating-table tbody tr .minWidth-25 {
+            min-width: 25%;
+        }
+
+        .rating-table tbody tr .minWidth-50 {
+            min-width: 50%;
+        }
+
+    .rating-table .dataTables_empty {
+        border: 1px solid #e4e2e2 !important;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+.block-customer-table {
+    border: 0px !important
+}
+
+    .block-customer-table thead {
+        display: none;
+    }
+
+    .block-customer-table tbody tr {
+        border: 1px solid #e1e1e1 !important;
+        display: inline-block;
+        min-width: 30%;
+        margin: 0px 15px 20px;
+    }
+
+        .block-customer-table tbody tr td {
+            display: flex;
+            padding: 0px;
+            border: 0px !important;
+        }
+
+        .block-customer-table tbody tr .content-box {
+            padding: 30px 5px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .block-customer-table tbody tr .content-box .img-avtar {
+                height: 100px;
+                margin: 30px auto 20px;
+            }
+
+            .block-customer-table tbody tr .content-box .user-name {
+                color: #4f4f4f;
+                font-size: 18px;
+                line-height: 22px;
+                font-weight: 700;
+                margin: auto;
+                margin-bottom: 15px;
+            }
+
+            .block-customer-table tbody tr .content-box .button-blocUnblock {
+                width: 80px;
+                font-size: 14px;
+                padding: 5px;
+                border: none !important;
+                color: #fff !important;
+                margin: auto;
+                border-radius: 30px;
+            }
+
+            .block-customer-table tbody tr .content-box .button-block {
+                background: #ff6b6b;
+            }
+
+                .block-customer-table tbody tr .content-box .button-block:hover {
+                    background: #cc5656 !important;
+                }
+
+            .block-customer-table tbody tr .content-box .button-unblock {
+                background: #1d7a8c !important
+            }
+
+                .block-customer-table tbody tr .content-box .button-unblock:hover {
+                    background-color: #146371 !important;
+                }
+
+
+@media (max-width: 1200px) {
+    .navbar-collapse .navbar-nav {
+        align-items: center;
+    }
+
+    .navbar-collapse ul li {
+        margin: 7px;
+    }
+
+        .navbar-collapse ul li a {
+            display: inline-block;
+        }
+
+    .scroll-up-btn.top-arrow {
+        left: 10px;
+    }
+
+    .scroll-up-btn.message-box {
+        right: 10px !important;
+    }
+
+    .navbar .navbar-collapse {
+        position: fixed;
+        right: -250px;
+        height: 100%;
+        width: 250px;
+        top: 0;
+        background: #fff;
+        box-shadow: none;
+        z-index: 10;
+        transition: all 0.3s ease;
+        overflow: auto;
+        padding-top: 10px;
+    }
+
+    .navbar .backblack.open {
+        visibility: visible;
+        opacity: 0.5;
+        display: block;
+    }
+
+    .show {
+        right: 0px !important;
+    }
+
+        .show .navbar-nav {
+            align-items: flex-start !important;
+            border-bottom: 1px solid #e1e1e1;
+            transition: all 1s ease;
+        }
+
+        .show .nav-item .nav-link {
+            font-size: 16px;
+            line-height: 24px;
+            border: none;
+            background-color: white;
+            padding: 0px;
+            margin: 0px;
+            color: #646464 !important;
+            padding: 0px 20px !important;
+        }
+
+    .navbar .navbar-nav li a:hover {
+        border: 0px;
+    }
+
+    .navbar .navbar-nav .user-name {
+        padding: 10px 20px 5px;
+        font-size: 18px;
+        font-weight: 400;
+        width: 100%;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+        .navbar .navbar-nav .user-name span {
+            font-weight: 500;
+        }
+
+    .navbar .navbar-toggler {
+        margin-left: 15px;
+    }
+
+    .how-it-works .backgroung-img {
+        display: none;
+    }
+
+    .side-bar .side-bar-menu .side-menu-link {
+        min-width: 230px;
+    }
+
+    .main-content {
+        width: 100% !important;
+    }
+
+        .main-content table {
+            width: 100% !important;
+        }
+
+            .main-content table thead tr td {
+                padding: 10px 10px !important;
+            }
+
+    .div-table > div {
+        overflow-x: auto !important;
+    }
+
+    .hr-navbar {
+        color: #fff;
+        width: 25%;
+        margin: 5px;
+    }
+
+    .main-body .side-bar {
+        display: none;
+    }
+
+    .main-body .main-content {
+        margin-left: 0px;
+    }
+
+    .set-up-cleaning-services .nav .nav-link img {
+        margin-right: 0px;
+    }
+
+    .set-up-cleaning-services .nav .nav-link span {
+        display: block;
+    }
+}
+
+@media (max-width: 1199px) {
+    .navbar-collapse {
+        background-color: #525252;
+        height: 100vh;
+    }
+}
+
+@media (max-width: 992px) {
+    .home .home-content .button button {
+        margin-bottom: 30px;
+    }
+
+    .home .home-content .payment-process .arrow img {
+        width: 50px;
+    }
+
+    .home .home-content .payment-process .icon-box {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .text-blog .backgroung-img {
+        display: none;
+    }
+
+    .text-blog .img-box {
+        order: -1;
+    }
+
+    footer .footer-max-width .logo img {
+        width: 90px;
+        margin-bottom: 25px;
+    }
+
+    footer .footer-max-width {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        footer .footer-max-width .nav {
+            margin-bottom: 25px;
+        }
+
+    .prices-why-helperland .prices-why-helperland-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prices-why-helperland .card {
+        width: auto;
+    }
+
+        .prices-why-helperland .card .card-title {
+            text-align: center;
+        }
+
+        .prices-why-helperland .card .card-text {
+            text-align: center;
+            margin: 0px auto 20px auto;
+        }
+
+    .set-up-cleaning-services .nav .nav-link span {
+        display: none;
+    }
+
+    .block-customer-table tbody tr {
+        min-width: 40%
+    }
+}
+
+@media (max-width: 768px) {
+
+    .max-width,
+    .max-width-1104 {
+        padding: 0px 30px;
+    }
+
+    section .title {
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    .navbar-brand img {
+        height: 90px;
+        width: auto;
+    }
+
+    .home .home-content .home-text h2 {
+        line-height: 50px;
+        font-size: 45px;
+    }
+
+    .home .home-content {
+        padding-top: 220px;
+    }
+
+        .home .home-content .payment-process {
+            display: block;
+        }
+
+            .home .home-content .payment-process .arrow img {
+                transform: rotate(90deg);
+            }
+
+            .home .home-content .payment-process .arrow .rotateImg {
+                transform: rotate(265deg) scaleX(-1);
+            }
+
+    .how-it-works .registration-process .registration-process-box {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    .how-it-works .registration-process :nth-child(1) img,
+    .how-it-works .registration-process :nth-child(3) img {
+        order: -1;
+    }
+
+    .how-it-works .registration-process .information {
+        width: 80%;
+    }
+
+    .how-it-works .registration-process .registration-process-box .registration-process-img {
+        margin-bottom: 15px;
+    }
+
+    .how-it-works .registration-process .information p {
+        margin-bottom: 15px;
+    }
+
+    .main-content table.card-view-small-screen {
+        border: 0px !important;
+    }
+
+        .main-content table.card-view-small-screen thead {
+            display: none;
+        }
+
+        .main-content table.card-view-small-screen tbody tr {
+            display: flex;
+            flex-direction: column;
+            min-width: 270px;
+            max-width: 460px;
+            align-items: center;
+            margin: 10px auto;
+        }
+
+            .main-content table.card-view-small-screen tbody tr td {
+                border-bottom: 0px !important;
+            }
+
+    .rating-table tbody tr .minWidth-25 {
+        min-width: 50%;
+    }
+
+    .rating-table tbody tr .minWidth-50 {
+        min-width: 100%;
+    }
+
+
+    .block-customer-table tbody tr {
+        min-width: 43%
+    }
+}
+
+@media (max-width: 576px) {
+    .p-lr-40 {
+        padding: 0 20px;
+    }
+
+    section .title {
+        font-size: 35px;
+        line-height: 40px;
+    }
+
+    section .star-title {
+        font-size: 30px;
+    }
+
+        section .star-title::before {
+            bottom: -18px;
+        }
+
+        section .star-title::after {
+            bottom: -30px;
+        }
+
+    .max-width,
+    .max-width-1104,
+    .max-width-1400 {
+        padding: 0px 15px;
+    }
+
+    .navbar-brand img {
+        height: 60px;
+        width: auto;
+    }
+
+
+    .home .home-content {
+        padding: 220px 5px 15px 5px;
+    }
+
+        .home .home-content .title {
+            font-size: 25px;
+        }
+
+        .home .home-content .home-text h2 {
+            font-size: 35px;
+        }
+
+        .home .home-content .home-text ul li {
+            font-size: 14px;
+        }
+
+        .home .home-content .payment-process h6 {
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        .home .home-content .button button {
+            padding: 8px 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+    .helperland .row h3 {
+        font-size: 24px;
+        height: 40px;
+    }
+
+    .helperland .row p {
+        font-size: 15px;
+    }
+
+    .text-blog .row h3 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .text-blog .row p {
+        font-size: 16px;
+        line-height: 21px;
+        text-align: justify;
+    }
+
+    footer .footer-max-width .logo img {
+        width: 70px;
+    }
+
+
+    .faq .faq-questions .question-tab .nav-item {
+        display: contents;
+    }
+
+
+    .set-up-cleaning-services .card-number {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .set-up-cleaning-services .img-card-inputTag {
+        display: none;
+    }
+
+    .set-up-cleaning-services .expiry-date {
+        right: 50px;
+        width: 80px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .set-up-cleaning-services .cvc {
+        right: 13px;
+        width: 50px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .block-customer-table tbody tr {
+        min-width: 90%
+    }
+}
+
+@media (max-width: 420px) {
+
+    .home .home-content .payment-process .payment-process-box {
+        margin: 0px 10px;
+    }
+
+    .home .home-content .home-text {
+        padding-left: 10px;
+    }
+
+    .helperland .row img {
+        height: auto;
+    }
+
+    .faq .faq-questions p br {
+        display: none;
+    }
+
+
+    .how-it-works .registration-process .information {
+        width: 100%;
+    }
+
+    #ServiceDetailModel .button-group .btn.rounded-pill > span {
+        display: none;
+    }
+
+    #ServiceDetailModel .button-group {
+        text-align: center;
+    }
+
+    .rating-table tbody tr .minWidth-25 {
+        min-width: 100%;
+    }
+}
